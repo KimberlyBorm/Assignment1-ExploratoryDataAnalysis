@@ -23,7 +23,7 @@
         library(readr)
         library(dplyr)
         #Read files
-        data <- read_delim("household_power_consumption.txt", delim = ";", na = "?")
+        data <- read_delim("household_power_consumption.txt", delim = ";", na = "?", col_types = FALSE)
         #filter the data we need
         filtered_data <- data %>%
             filter(Date %in% c("1/2/2007", "2/2/2007"))
