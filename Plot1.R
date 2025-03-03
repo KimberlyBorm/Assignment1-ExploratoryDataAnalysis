@@ -1,4 +1,4 @@
-##Assignment 1 Code - Exploratory Data Analysis
+##Assignment 1 Code - Plot 1 - Exploratory Data Analysis
 
 #Load data, parse, and reformat
     # Define  URL for the dataset and the destination file name for portaility
@@ -35,7 +35,7 @@
 #Create plot 1 (Histogram of Global Active Power in red)
     #open png graphing device
     png(filename = "plot1.png", width = 480, height = 480)
-    #create plot 
+    #create plot with titles and color desired
     with(filtered_data, hist(Global_active_power, col = "red", breaks = 12, xlab = "Global Active Power (kilowatts)", main = "Global Active Power"))
     #turn off graphing device
     dev.off()

@@ -34,9 +34,11 @@
 #Create plot 2 (Line Plot of Global Active Power across Time)
     #open png graphing device
     png(filename = "plot2.png", width = 480, height = 480)
-    #create plot 
-    with(filtered_data, plot(DateTime, Global_active_power, type = "l", xlab = "", ylab = "Global Active Power (kilowatts)", xaxt = "n"))
-    dt <- filtered_data$DateTime
-    axis(1, at = c(min(dt), median(dt), max(dt)), labels = c("Thu", "Fri", "Sat"))
+    #create desired plot 
+        #create line plot with labels,leaving x-axis scale and x label blank
+        with(filtered_data, plot(DateTime, Global_active_power, type = "l", xlab = "", ylab = "Global Active Power (kilowatts)", xaxt = "n"))
+        #use Date Time for accurate placement of x-axis scale for days
+        dt <- filtered_data$DateTime
+        axis(1, at = c(min(dt), median(dt), max(dt)), labels = c("Thu", "Fri", "Sat"))
     #turn off graphing device
     dev.off()
